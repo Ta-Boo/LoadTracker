@@ -1,0 +1,6 @@
+xcassets:
+  inputs:
+    LoadTracker/Resources
+  outputs:
+    templatePath: Loader.stencil
+    output: LoadTracker/Generated/Assets.swift

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  LoadTracker
-//
-//  Created by hladek on 19/09/2020.
-//
-
 import SwiftUI
 
 struct ContentView: View {
