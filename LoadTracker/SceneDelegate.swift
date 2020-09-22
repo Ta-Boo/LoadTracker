@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = MainTabBarView()
-            .background(Color(String.Colors.primary))
+            .background(Assets.Colors.primary)
             .ignoresSafeArea(.all, edges: .vertical)
 
         // Use a UIHostingController as window root view controller.

@@ -43,12 +43,12 @@ struct Onboarding: View {
                     HStack {
                         Spacer()
                         ZStack {
-                            Image(String.Icons.onboardingBackground)
+                            Assets.Icons.onboardingBackground
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.pink)
                                 .padding(geometry.size.width * 0.025)
-                            Image(page.image)
+                            page.image
                                 .resizable()
                                 .scaledToFit()
                                 .padding(geometry.size.width * 0.1)
@@ -67,7 +67,7 @@ struct Onboarding: View {
                             destination: MainTabBarView()
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarHidden(true)
-                                .background(Color(String.Colors.primary)),
+                                .background(Assets.Colors.primary),
                             label: {
                                 Text("Start")
                                     .font(.headline)
