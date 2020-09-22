@@ -1,36 +1,41 @@
 import SwiftUI
 
 struct LoaderTabBarItemView: View {
-    @State var color = Color.white
-    @State var offset : CGFloat = 0
-    @State var opacity : Double = 1
+    @Binding var selected: Int
+    @Binding var selectedPosition: CGFloat
+    let item: LoaderTabBarItem
+    let index: Int
+    let colors: LoaderTabBarColor
+
     var body: some View {
-            VStack{
-                Button(action: {
-                    withAnimation(.spring()){
-//                        index = 0
-//                        self.curvePos = g.frame(in: .global).midX
-                    }
-                    
-                }, label: {
-                    
-                  Image(systemName: "waveform.path.ecg")
-                        .renderingMode(.template)
-                        .resizable()
-                        .foregroundColor(color)
-                        .frame(width: 28, height: 28)
-                        .padding(.all, 15)
-                        .background(Color.pink.opacity(opacity).clipShape(Circle()))
-                        .offset(y: offset)
-                })
-            }
+        GeometryReader{ g in
+            Button(action: {
+                withAnimation(.spring()){
+                    selected = index
+                    self.selectedPosition = g.frame(in: .global).midX
+                }
+            }, label: {
+                Image(systemName: item.icon)
+                    .renderingMode(.template)
+                    .resizable()
+                    .foregroundColor(isSelected ? colors.selected : colors.unselected  )
+                    .frame(width: 28, height: 28)
+                    .padding(.all, 15)
+                    .background(colors.foreground.opacity(isSelected ? 1 : 0).clipShape(Circle()))
+                    .offset(y: isSelected ? -14 : 4)
+            })
             .frame(width: 43, height: 43)
+            .onAppear {
+                DispatchQueue.main.async {
+                    self.selectedPosition = g.frame(in: .global).midX
+                }
+            }
         }
+        .frame(width: 43, height: 43)
+        .offset(y: -30)
     }
     
-
-struct LoaderTabBarItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoaderTabBarItemView()
+    var isSelected : Bool{
+        selected == index
     }
 }

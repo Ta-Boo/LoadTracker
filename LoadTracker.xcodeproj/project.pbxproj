@@ -21,8 +21,11 @@
 		B3FD82B425176B66002750F5 /* WorkoutPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B325176B66002750F5 /* WorkoutPlan.swift */; };
 		B3FD82B825176B7D002750F5 /* CaloriesPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */; };
 		B3FD82BB25176BBB002750F5 /* DietPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82BA25176BBB002750F5 /* DietPlan.swift */; };
-		B3FD82D22519ED62002750F5 /* CShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82D12519ED62002750F5 /* CShape.swift */; };
+		B3FD82D22519ED62002750F5 /* LoaderTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82D12519ED62002750F5 /* LoaderTabBarShape.swift */; };
 		B3FD82D62519F067002750F5 /* LoaderTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */; };
+		B3FD82E32519FD3D002750F5 /* LoaderTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82E22519FD3D002750F5 /* LoaderTabBarItem.swift */; };
+		B3FD82E6251A0362002750F5 /* LoaderTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82E5251A0362002750F5 /* LoaderTabBar.swift */; };
+		B3FD82EF251A3403002750F5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FD82EE251A3402002750F5 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +45,11 @@
 		B3FD82B325176B66002750F5 /* WorkoutPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlan.swift; sourceTree = "<group>"; };
 		B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesPlan.swift; sourceTree = "<group>"; };
 		B3FD82BA25176BBB002750F5 /* DietPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPlan.swift; sourceTree = "<group>"; };
-		B3FD82D12519ED62002750F5 /* CShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CShape.swift; sourceTree = "<group>"; };
+		B3FD82D12519ED62002750F5 /* LoaderTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTabBarShape.swift; sourceTree = "<group>"; };
 		B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTabBarItemView.swift; sourceTree = "<group>"; };
+		B3FD82E22519FD3D002750F5 /* LoaderTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTabBarItem.swift; sourceTree = "<group>"; };
+		B3FD82E5251A0362002750F5 /* LoaderTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTabBar.swift; sourceTree = "<group>"; };
+		B3FD82EE251A3402002750F5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B37BDEF32516408700AC780E /* Assets.xcassets */,
+				B3FD82EE251A3402002750F5 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -146,8 +153,8 @@
 		B3FD82AB25176956002750F5 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				B3FD82D02519ED3F002750F5 /* Helpers */,
 				B3FD82AC25176970002750F5 /* MainTabBar.swift */,
+				B3FD82D02519ED3F002750F5 /* Helpers */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -179,8 +186,10 @@
 		B3FD82D02519ED3F002750F5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B3FD82D12519ED62002750F5 /* CShape.swift */,
+				B3FD82D12519ED62002750F5 /* LoaderTabBarShape.swift */,
 				B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */,
+				B3FD82E22519FD3D002750F5 /* LoaderTabBarItem.swift */,
+				B3FD82E5251A0362002750F5 /* LoaderTabBar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B37BDEFA2516408700AC780E /* LaunchScreen.storyboard in Resources */,
+				B3FD82EF251A3403002750F5 /* Colors.xcassets in Resources */,
 				B37BDEF72516408700AC780E /* Preview Assets.xcassets in Resources */,
 				B37BDEF42516408700AC780E /* Assets.xcassets in Resources */,
 			);
@@ -256,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FD82AD25176970002750F5 /* MainTabBar.swift in Sources */,
+				B3FD82E6251A0362002750F5 /* LoaderTabBar.swift in Sources */,
 				B37BDEEE2516408600AC780E /* AppDelegate.swift in Sources */,
 				B37BDEF02516408600AC780E /* SceneDelegate.swift in Sources */,
 				B3FD82B825176B7D002750F5 /* CaloriesPlan.swift in Sources */,
@@ -266,7 +277,8 @@
 				B31209EC25168891003FBCD6 /* ViewController.swift in Sources */,
 				B31209E82516885D003FBCD6 /* ViewModel.swift in Sources */,
 				B3FD82BB25176BBB002750F5 /* DietPlan.swift in Sources */,
-				B3FD82D22519ED62002750F5 /* CShape.swift in Sources */,
+				B3FD82E32519FD3D002750F5 /* LoaderTabBarItem.swift in Sources */,
+				B3FD82D22519ED62002750F5 /* LoaderTabBarShape.swift in Sources */,
 				B3FD82D62519F067002750F5 /* LoaderTabBarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
