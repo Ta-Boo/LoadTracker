@@ -15,14 +15,10 @@ struct OnboardingTabModel: Identifiable {
 
 class OnboardingViewModel: ObservableObject, ViewModel {
     @Published var data: [OnboardingTabModel] = [
-        OnboardingTabModel(id: 0, title: "Create your own workout plan now!", image: .mountain ),
-        OnboardingTabModel(id: 1, title: "Create your own workout plan now!1", image: .mountain ),
-        OnboardingTabModel(id: 1, title: "Create your own workout plan now!2", image: .bull ),
+        OnboardingTabModel(id: 0, title: "Create your own diet plan.", image: .onboardingDiet),
+        OnboardingTabModel(id: 1, title: "Track calories income.", image: .onboardingCalories),
+        OnboardingTabModel(id: 2, title: "Save your training progress.", image: .onboardingFit),
     ]
 }
 
-let data = [
-    OnboardingTabModel(id: 0, title: "Create your own workout plan now!", image: .mountain ),
-    OnboardingTabModel(id: 1, title: "Create your own workout plan now!1", image: .mountain ),
-    OnboardingTabModel(id: 1, title: "Create your own workout plan now!2", image: .bull ),
-]
+    

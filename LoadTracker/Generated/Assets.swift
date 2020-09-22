@@ -5,6 +5,12 @@ import UIKit.UIImage
 
 // MARK: - Asset Catalogs
 public extension String {
-  static let bull = "bull"
-  static let mountain = "mountain"
+  static let onboardingBackground = "onboarding_background"
+  static let onboardingCalories = "onboarding_calories"
+  static let onboardingDiet = "onboarding_diet"
+  static let onboardingFit = "onboarding_fit"
+  static let calories = "calories"
+  static let diet = "diet"
+  static let gym = "gym"
+  static let steps = "steps"
 }

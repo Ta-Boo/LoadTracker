@@ -13,11 +13,16 @@
 		B31209F0251689F3003FBCD6 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31209EF251689F3003FBCD6 /* OnBoardingViewModel.swift */; };
 		B37BDEEE2516408600AC780E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDEED2516408600AC780E /* AppDelegate.swift */; };
 		B37BDEF02516408600AC780E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDEEF2516408600AC780E /* SceneDelegate.swift */; };
-		B37BDEF22516408600AC780E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDEF12516408600AC780E /* ContentView.swift */; };
 		B37BDEF42516408700AC780E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF32516408700AC780E /* Assets.xcassets */; };
 		B37BDEF72516408700AC780E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF62516408700AC780E /* Preview Assets.xcassets */; };
 		B37BDEFA2516408700AC780E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF82516408700AC780E /* LaunchScreen.storyboard */; };
 		B37BDF292516487E00AC780E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDF282516487E00AC780E /* Assets.swift */; };
+		B3FD82AD25176970002750F5 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82AC25176970002750F5 /* MainTabBar.swift */; };
+		B3FD82B425176B66002750F5 /* WorkoutPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B325176B66002750F5 /* WorkoutPlan.swift */; };
+		B3FD82B825176B7D002750F5 /* CaloriesPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */; };
+		B3FD82BB25176BBB002750F5 /* DietPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82BA25176BBB002750F5 /* DietPlan.swift */; };
+		B3FD82D22519ED62002750F5 /* CShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82D12519ED62002750F5 /* CShape.swift */; };
+		B3FD82D62519F067002750F5 /* LoaderTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +33,17 @@
 		B37BDEEA2516408600AC780E /* LoadTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37BDEED2516408600AC780E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B37BDEEF2516408600AC780E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B37BDEF12516408600AC780E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B37BDEF32516408700AC780E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B37BDEF62516408700AC780E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B37BDEF92516408700AC780E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B37BDEFB2516408700AC780E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37BDF282516487E00AC780E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		B3FD82AC25176970002750F5 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		B3FD82B325176B66002750F5 /* WorkoutPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlan.swift; sourceTree = "<group>"; };
+		B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesPlan.swift; sourceTree = "<group>"; };
+		B3FD82BA25176BBB002750F5 /* DietPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPlan.swift; sourceTree = "<group>"; };
+		B3FD82D12519ED62002750F5 /* CShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CShape.swift; sourceTree = "<group>"; };
+		B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTabBarItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				B31209EE251689D5003FBCD6 /* OnBoarding */,
+				B3FD82AB25176956002750F5 /* MainTabBar */,
+				B3FD82B225176B39002750F5 /* WorkoutPlan */,
+				B3FD82B125176B2F002750F5 /* CaloriesPlan */,
+				B3FD82B025176A8B002750F5 /* DietPlan */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,7 +112,6 @@
 				B37BDF252516461200AC780E /* Resources */,
 				B37BDEED2516408600AC780E /* AppDelegate.swift */,
 				B37BDEEF2516408600AC780E /* SceneDelegate.swift */,
-				B37BDEF12516408600AC780E /* ContentView.swift */,
 				B37BDEF82516408700AC780E /* LaunchScreen.storyboard */,
 				B37BDEFB2516408700AC780E /* Info.plist */,
 				B37BDEF52516408700AC780E /* Preview Content */,
@@ -128,6 +141,48 @@
 				B37BDF282516487E00AC780E /* Assets.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		B3FD82AB25176956002750F5 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD82D02519ED3F002750F5 /* Helpers */,
+				B3FD82AC25176970002750F5 /* MainTabBar.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		B3FD82B025176A8B002750F5 /* DietPlan */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD82BA25176BBB002750F5 /* DietPlan.swift */,
+			);
+			path = DietPlan;
+			sourceTree = "<group>";
+		};
+		B3FD82B125176B2F002750F5 /* CaloriesPlan */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */,
+			);
+			path = CaloriesPlan;
+			sourceTree = "<group>";
+		};
+		B3FD82B225176B39002750F5 /* WorkoutPlan */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD82B325176B66002750F5 /* WorkoutPlan.swift */,
+			);
+			path = WorkoutPlan;
+			sourceTree = "<group>";
+		};
+		B3FD82D02519ED3F002750F5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD82D12519ED62002750F5 /* CShape.swift */,
+				B3FD82D52519F067002750F5 /* LoaderTabBarItemView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,14 +255,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FD82AD25176970002750F5 /* MainTabBar.swift in Sources */,
 				B37BDEEE2516408600AC780E /* AppDelegate.swift in Sources */,
 				B37BDEF02516408600AC780E /* SceneDelegate.swift in Sources */,
+				B3FD82B825176B7D002750F5 /* CaloriesPlan.swift in Sources */,
 				B31209E425168696003FBCD6 /* Onboarding.swift in Sources */,
 				B31209F0251689F3003FBCD6 /* OnBoardingViewModel.swift in Sources */,
 				B37BDF292516487E00AC780E /* Assets.swift in Sources */,
+				B3FD82B425176B66002750F5 /* WorkoutPlan.swift in Sources */,
 				B31209EC25168891003FBCD6 /* ViewController.swift in Sources */,
 				B31209E82516885D003FBCD6 /* ViewModel.swift in Sources */,
-				B37BDEF22516408600AC780E /* ContentView.swift in Sources */,
+				B3FD82BB25176BBB002750F5 /* DietPlan.swift in Sources */,
+				B3FD82D22519ED62002750F5 /* CShape.swift in Sources */,
+				B3FD82D62519F067002750F5 /* LoaderTabBarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,7 +41,7 @@ import UIKit.UIImage
   {% endif %}
   {% endfor %}
 {% endmacro %}
-public extension UIImage {
+public extension String {
   {% if catalogs.count > 1 %}
   {% for catalog in catalogs %}
   enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
