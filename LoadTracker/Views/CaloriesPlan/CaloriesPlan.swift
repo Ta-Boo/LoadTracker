@@ -10,7 +10,7 @@ import SwiftUI
 struct CaloriesPlan: View {
     var body: some View {
         ZStack {
-            Color(.red)
+            Color("Primary")
             Text("Hello, CaloriesPlan!")
         }
     }

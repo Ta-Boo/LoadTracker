@@ -1,20 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Home()
-            .ignoresSafeArea(.all, edges: .vertical)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
-
-
-struct Home : View {
+struct MainTabBarView : View {
     @State var index = 0
     @State var curvePos : CGFloat = 0
     
@@ -23,6 +9,8 @@ struct Home : View {
         LoaderTabBarItem(icon: "calendar", backgroundColor: Color.red, foregroundColor: Color.green),
         LoaderTabBarItem(icon: "flame", backgroundColor: Color.red, foregroundColor: Color.green)
     ]
+    
+    
     
     var body: some View{
         ZStack {

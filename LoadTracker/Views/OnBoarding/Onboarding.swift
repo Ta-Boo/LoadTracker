@@ -26,7 +26,7 @@ struct Onboarding: View {
                         HStack{
                             Spacer()
                             NavigationLink(
-                                destination: ContentView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                destination: MainTabBarView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                                 label: {
                                     Image(systemName: "xmark.circle.fill")
                                         .font(.largeTitle)
@@ -43,7 +43,7 @@ struct Onboarding: View {
                     HStack {
                         Spacer()
                         ZStack {
-                            Image(.onboardingBackground)
+                            Image(String.Icons.onboardingBackground)
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.pink)
@@ -64,7 +64,10 @@ struct Onboarding: View {
                         .padding(.bottom, 32)
                     if page.id == viewModel.data.map{$0.id}.max(){
                         NavigationLink(
-                            destination: ContentView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                            destination: MainTabBarView()
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarHidden(true)
+                                .background(Color(String.Colors.primary)),
                             label: {
                                 Text("Start")
                                     .font(.headline)

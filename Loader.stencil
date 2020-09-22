@@ -1,34 +1,68 @@
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
-
 {% if catalogs %}
 {% set forceNamespaces %}{{param.forceProvidesNamespaces|default:"false"}}{% endset %}
-import UIKit.UIImage
+import SwiftUI
 
 // MARK: - Asset Catalogs
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
 {% macro enumBlock assets %}
   {% call casesBlock assets %}
   {% if param.allValues %}
 
+  // swiftlint:disable trailing_comma
   static let allImages: [{{imageType}}] = [
     {% filter indent:2 %}{% call allValuesBlock assets "image" "" %}{% endfilter %}
   ]
+  // swiftlint:enable trailing_comma
   {% endif %}
 {% endmacro %}
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
+{% macro colorBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "color" %}
+  	static public let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Color("{{asset.value}}")
+  {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+  enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+
+    {% filter indent:2 %}{% call colorBlock asset.items %}{% endfilter %}
+  	}
+  {% elif asset.items %}
+  {% call colorBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
+{% macro imageBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "image" %}
+  	static public let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Image("{{asset.value}}")
+  {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+  enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+
+    {% filter indent:2 %}{% call imageBlock asset.items %}{% endfilter %}
+  	}
+  {% elif asset.items %}
+  {% call imageBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
 {% macro casesBlock assets %}
   {% for asset in assets %}
   {% if asset.type == "image" %}
-  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = "{{asset.value}}"
+  	static public let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = UIImage.bundledImage(with: "{{asset.value}}")
   {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
   enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
 
     {% filter indent:2 %}{% call casesBlock asset.items %}{% endfilter %}
-  }
+  	}
   {% elif asset.items %}
   {% call casesBlock asset.items %}
   {% endif %}
   {% endfor %}
 {% endmacro %}
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
 {% macro allValuesBlock assets filter prefix %}
   {% for asset in assets %}
   {% if asset.type == filter %}
@@ -41,12 +75,17 @@ import UIKit.UIImage
   {% endif %}
   {% endfor %}
 {% endmacro %}
-public extension String {
+{#------------------------------------------------------------------------------------------------------------------------------------------#}
+public struct Assets {
   {% if catalogs.count > 1 %}
   {% for catalog in catalogs %}
-  enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
-    {% filter indent:2 %}{% call enumBlock catalog.assets %}{% endfilter %}
-  }
+  	enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+  {% if catalog.name == "Colors"  %}
+  	{% filter indent:2 %}{% call colorBlock catalog.assets %}{% endfilter %}
+  {% else %}
+  	{% filter indent:2 %}{% call imageBlock catalog.assets %}{% endfilter %}
+  {% endif %}
+  	}
   {% endfor %}
   {% else %}
   {% call enumBlock catalogs.first.assets %}
@@ -55,3 +94,4 @@ public extension String {
 {% else %}
 // No assets found
 {% endif %}
+{#------------------------------------------------------------------------------------------------------------------------------------------#}

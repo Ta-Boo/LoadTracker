@@ -10,9 +10,9 @@ import SwiftUI
 struct WorkoutPlan: View {
     var body: some View {
         ZStack {
-            Color(.red)
+            Color("Primary")
             Text("Hello, WorkoutPlan!")
-        }
+        }.background(Color("Primary"))
     }
 }
 

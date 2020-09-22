@@ -13,11 +13,11 @@
 		B31209F0251689F3003FBCD6 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31209EF251689F3003FBCD6 /* OnBoardingViewModel.swift */; };
 		B37BDEEE2516408600AC780E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDEED2516408600AC780E /* AppDelegate.swift */; };
 		B37BDEF02516408600AC780E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDEEF2516408600AC780E /* SceneDelegate.swift */; };
-		B37BDEF42516408700AC780E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF32516408700AC780E /* Assets.xcassets */; };
+		B37BDEF42516408700AC780E /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF32516408700AC780E /* Icons.xcassets */; };
 		B37BDEF72516408700AC780E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF62516408700AC780E /* Preview Assets.xcassets */; };
 		B37BDEFA2516408700AC780E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37BDEF82516408700AC780E /* LaunchScreen.storyboard */; };
 		B37BDF292516487E00AC780E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BDF282516487E00AC780E /* Assets.swift */; };
-		B3FD82AD25176970002750F5 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82AC25176970002750F5 /* MainTabBar.swift */; };
+		B3FD82AD25176970002750F5 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82AC25176970002750F5 /* MainTabBarView.swift */; };
 		B3FD82B425176B66002750F5 /* WorkoutPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B325176B66002750F5 /* WorkoutPlan.swift */; };
 		B3FD82B825176B7D002750F5 /* CaloriesPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */; };
 		B3FD82BB25176BBB002750F5 /* DietPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD82BA25176BBB002750F5 /* DietPlan.swift */; };
@@ -36,12 +36,12 @@
 		B37BDEEA2516408600AC780E /* LoadTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37BDEED2516408600AC780E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B37BDEEF2516408600AC780E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B37BDEF32516408700AC780E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B37BDEF32516408700AC780E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B37BDEF62516408700AC780E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B37BDEF92516408700AC780E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B37BDEFB2516408700AC780E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37BDF282516487E00AC780E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		B3FD82AC25176970002750F5 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		B3FD82AC25176970002750F5 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		B3FD82B325176B66002750F5 /* WorkoutPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlan.swift; sourceTree = "<group>"; };
 		B3FD82B725176B7D002750F5 /* CaloriesPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesPlan.swift; sourceTree = "<group>"; };
 		B3FD82BA25176BBB002750F5 /* DietPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPlan.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		B37BDF252516461200AC780E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B37BDEF32516408700AC780E /* Assets.xcassets */,
+				B37BDEF32516408700AC780E /* Icons.xcassets */,
 				B3FD82EE251A3402002750F5 /* Colors.xcassets */,
 			);
 			path = Resources;
@@ -153,7 +153,7 @@
 		B3FD82AB25176956002750F5 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				B3FD82AC25176970002750F5 /* MainTabBar.swift */,
+				B3FD82AC25176970002750F5 /* MainTabBarView.swift */,
 				B3FD82D02519ED3F002750F5 /* Helpers */,
 			);
 			path = MainTabBar;
@@ -254,7 +254,7 @@
 				B37BDEFA2516408700AC780E /* LaunchScreen.storyboard in Resources */,
 				B3FD82EF251A3403002750F5 /* Colors.xcassets in Resources */,
 				B37BDEF72516408700AC780E /* Preview Assets.xcassets in Resources */,
-				B37BDEF42516408700AC780E /* Assets.xcassets in Resources */,
+				B37BDEF42516408700AC780E /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FD82AD25176970002750F5 /* MainTabBar.swift in Sources */,
+				B3FD82AD25176970002750F5 /* MainTabBarView.swift in Sources */,
 				B3FD82E6251A0362002750F5 /* LoaderTabBar.swift in Sources */,
 				B37BDEEE2516408600AC780E /* AppDelegate.swift in Sources */,
 				B37BDEF02516408600AC780E /* SceneDelegate.swift in Sources */,
