@@ -5,9 +5,9 @@ struct MainTabBarView : View {
     @State var curvePos : CGFloat = 0
     
     let items: [LoaderTabBarItem] = [
-        LoaderTabBarItem(icon: "waveform.path.ecg", backgroundColor: Color.red, foregroundColor: Color.green),
-        LoaderTabBarItem(icon: "calendar", backgroundColor: Color.red, foregroundColor: Color.green),
-        LoaderTabBarItem(icon: "flame", backgroundColor: Color.red, foregroundColor: Color.green)
+        LoaderTabBarItem(icon: "waveform.path.ecg"),
+        LoaderTabBarItem(icon: "calendar"),
+        LoaderTabBarItem(icon: "flame"),
     ]
     
     

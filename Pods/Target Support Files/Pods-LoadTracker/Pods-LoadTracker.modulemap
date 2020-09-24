@@ -1,0 +1,6 @@
+module Pods_LoadTracker {
+  umbrella header "Pods-LoadTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
