@@ -12,25 +12,31 @@ struct Onboarding: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .edgesIgnoringSafeArea(.top)
             }
             .navigationBarHidden(true)
+            .background(Assets.Colors.primary)
+            .edgesIgnoringSafeArea(.top)
+
         }
     }
     
     func generatePage(data page: OnboardingTabModel) -> some View {
         GeometryReader { geometry in
             ZStack{
-                if page.id == viewModel.data.map{$0.id}.max() {
+                if page.id == viewModel.data.map{$0.id}.min() {
                     VStack {
                         HStack{
                             Spacer()
                             NavigationLink(
-                                destination: MainTabBarView().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                destination: MainTabBarView()
+                                    .background(Assets.Colors.primary)
+                                    .edgesIgnoringSafeArea(.top)
+                                    .navigationBarBackButtonHidden(true)
+                                    .navigationBarHidden(true),
                                 label: {
                                     Image(systemName: "xmark.circle.fill")
                                         .font(.largeTitle)
-                                        .foregroundColor(.pink)
+                                        .foregroundColor(Assets.Colors.secondary)
                                         .padding()
                                 })
                         }
@@ -59,10 +65,10 @@ struct Onboarding: View {
                     Spacer()
                     Text(page.title)
                         .font(.headline).bold()
-                        .foregroundColor(.gray)
+                        .foregroundColor(Assets.Colors.text)
                         .padding(.horizontal, 10)
                         .padding(.bottom, 32)
-                    if page.id == viewModel.data.map{$0.id}.max(){
+                    if page.id == viewModel.data.map{$0.id}.min(){
                         NavigationLink(
                             destination: MainTabBarView()
                                 .navigationBarBackButtonHidden(true)
@@ -72,8 +78,8 @@ struct Onboarding: View {
                                 Text("Start")
                                     .font(.headline)
                                     .frame(width: 300, height: 50, alignment: .center)
-                                    .foregroundColor(.white)
-                                    .background(Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)))
+                                    .foregroundColor(Assets.Colors.text)
+                                    .background(Assets.Colors.secondary)
                                     .cornerRadius(25)
                                     .padding(.bottom, 15)
                             })

@@ -17,10 +17,16 @@ struct MainTabBarView : View {
             switch index {
             case 0:
                 WorkoutPlan()
+                    .background(Assets.Colors.primary)
+                    .ignoresSafeArea(.all, edges: .top)
             case 1 :
                 CaloriesPlan()
+                    .background(Assets.Colors.primary)
+                    .ignoresSafeArea(.all, edges: .top)
             default:
                 WorkoutPlan()
+                    .background(Assets.Colors.primary)
+                    .ignoresSafeArea(.all, edges: .top)
             }
             VStack {
                 Spacer()
@@ -28,10 +34,11 @@ struct MainTabBarView : View {
                              selectedPosition: $curvePos,
                              colors: LoaderTabBarColor(foreground: .pink,
                                                        selected: .white,
-                                                       unselected: .black),
+                                                       unselected: Assets.Colors.accent),
                              items: items)
             }
             
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }

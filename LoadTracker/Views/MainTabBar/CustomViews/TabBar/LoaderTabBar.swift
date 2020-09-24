@@ -22,8 +22,9 @@ struct LoaderTabBar: View {
                 }
             }
         }
+        .frame(height: 36)
         .padding(.top, 22)
-        .padding(.bottom, 10)
+        //        .padding(.bottom, 10)
         .padding(.horizontal, 28)
         .offset(y: 5.0)
         .animation(.default)

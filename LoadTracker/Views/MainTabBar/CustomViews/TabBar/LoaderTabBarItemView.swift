@@ -22,16 +22,16 @@ struct LoaderTabBarItemView: View {
                     .frame(width: 28, height: 28)
                     .padding(.all, 15)
                     .background(colors.foreground.opacity(isSelected ? 1 : 0).clipShape(Circle()))
-                    .offset(y: isSelected ? -14 : 4)
+                    .offset(y: isSelected ? -24 : 0)
             })
-            .frame(width: 43, height: 43)
+            .frame(width: 36)
             .onAppear {
                 DispatchQueue.main.async {
                     self.selectedPosition = g.frame(in: .global).midX
                 }
             }
         }
-        .frame(width: 43, height: 43)
+        .frame(width: 36)
         .offset(y: -30)
     }
     
