@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 extension Session {
-    static func foodApiRequest(querry: String) {
-        // Broken API endpoint results in this mess
+    static func foodApiRequest(querry: String, completion: @escaping (DataResponse<FoodContainerModel, AFError>) -> Void) {
+        // Broken API endpoint results into this mess
         let body = "{\"query\": \"\(querry)\",\"pageSize\": 1,\"sortBy\": \"dataType.keyword\",\"sortOrder\": \"asc\",\"pageNumber\": 1}"
-
+        
         let apiKey = "xRdBi4YXifMEGytO7fscvm256NxcCz0QZvPdc4Sa" // IP protected API, so IDC about security
         let headers: [String: String] = ["accept" : "application/json",
                                          "Content-Type" : "application/json"
@@ -25,15 +25,10 @@ extension Session {
         request.httpBody = body.data(using: .utf8)
         request.headers = HTTPHeaders(headers)
         request.method = .post
-        
         AF.request(request)
             .validate()
             .responseDecodable(of: FoodContainerModel.self) { response in
-                guard let foodModel = response.value else {
-                    print(response.error!)
-                    return
-                }
-                print(foodModel.totalPages)
+                completion(response)
             }
     }
 }

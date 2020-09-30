@@ -13,23 +13,16 @@ struct MainTabBarView : View {
     
     
     var body: some View{
-        ZStack {
+        VStack {
             switch index {
             case 0:
                 WorkoutPlan()
-                    .background(Assets.Colors.primary)
-                    .ignoresSafeArea(.all, edges: .top)
             case 1 :
                 CaloriesPlan()
-                    .background(Assets.Colors.primary)
-                    .ignoresSafeArea(.all, edges: .top)
             default:
                 WorkoutPlan()
-                    .background(Assets.Colors.primary)
-                    .ignoresSafeArea(.all, edges: .top)
             }
             VStack {
-                Spacer()
                 LoaderTabBar(selectedIndex: $index,
                              selectedPosition: $curvePos,
                              colors: LoaderTabBarColor(foreground: .pink,
@@ -39,6 +32,26 @@ struct MainTabBarView : View {
             }
             
         }
-        .edgesIgnoringSafeArea(.top)
+        .background(Assets.Colors.primary)
+        .edgesIgnoringSafeArea(.vertical)
+    }
+    init() {
+        AppCache.showOnboarding = false
     }
 }
+
+#if DEBUG
+struct MainTabBar_Previews: PreviewProvider {
+   static var previews: some View {
+      Group {
+        MainTabBarView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
+
+        MainTabBarView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
+            .previewDisplayName("iPhone XS Max")
+      }
+   }
+}
+#endif

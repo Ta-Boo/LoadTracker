@@ -1,5 +1,15 @@
 import SwiftUI
 
+struct StartingView : View {
+    var body: some View {
+        if AppCache.showOnboarding {
+            Onboarding()
+        } else {
+            MainTabBarView()
+        }
+    }
+}
+
 struct Onboarding: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
@@ -15,32 +25,35 @@ struct Onboarding: View {
             }
             .navigationBarHidden(true)
             .background(Assets.Colors.primary)
-            .edgesIgnoringSafeArea(.top)
-
+            .edgesIgnoringSafeArea(.vertical)
+            
         }
     }
     
     func generatePage(data page: OnboardingTabModel) -> some View {
         GeometryReader { geometry in
             ZStack{
-                if page.id == viewModel.data.map{$0.id}.min() {
+                if page.id == viewModel.data.map{$0.id}.max() {
                     VStack {
                         HStack{
                             Spacer()
                             NavigationLink(
                                 destination: MainTabBarView()
                                     .background(Assets.Colors.primary)
-                                    .edgesIgnoringSafeArea(.top)
+                                    .edgesIgnoringSafeArea(.vertical)
                                     .navigationBarBackButtonHidden(true)
-                                    .navigationBarHidden(true),
-                                label: {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .font(.largeTitle)
-                                        .foregroundColor(Assets.Colors.secondary)
-                                        .padding()
-                                })
+                                    .navigationBarHidden(true)) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.largeTitle)
+                                    .foregroundColor(Assets.Colors.secondary)
+                                    .padding()
+                            }
+                            
                         }
+                        
                         Spacer()
+                    }.onTapGesture {
+                        AppCache.showOnboarding = false
                     }
                 }
                 VStack {
@@ -68,21 +81,22 @@ struct Onboarding: View {
                         .foregroundColor(Assets.Colors.text)
                         .padding(.horizontal, 10)
                         .padding(.bottom, 32)
-                    if page.id == viewModel.data.map{$0.id}.min(){
+                    if page.id == viewModel.data.map{$0.id}.max(){
                         NavigationLink(
                             destination: MainTabBarView()
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarHidden(true)
-                                .background(Assets.Colors.primary),
-                            label: {
-                                Text("Start")
-                                    .font(.headline)
-                                    .frame(width: 300, height: 50, alignment: .center)
-                                    .foregroundColor(Assets.Colors.text)
-                                    .background(Assets.Colors.secondary)
-                                    .cornerRadius(25)
-                                    .padding(.bottom, 15)
-                            })
+                                .background(Assets.Colors.primary)
+                            
+                        ) {
+                            Text("Start")
+                                .font(.headline)
+                                .frame(width: 300, height: 50, alignment: .center)
+                                .foregroundColor(Assets.Colors.text)
+                                .background(Assets.Colors.secondary)
+                                .cornerRadius(25)
+                                .padding(.bottom,15)
+                        }
                     }
                     Spacer()
                 }

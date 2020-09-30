@@ -13,7 +13,7 @@ struct WorkoutPlan: View {
             Color("Primary")
             Text("Hello, WorkoutPlan!")
         }.background(Color("Primary"))
-        .edgesIgnoringSafeArea(.top)
+//        .edgesIgnoringSafeArea(.vertical)
     }
 }
 
