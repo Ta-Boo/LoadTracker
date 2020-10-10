@@ -18,12 +18,14 @@ struct FoodContainerModel: Codable {
 }
 
 
-struct FoodModel: Codable {
+struct FoodModel: Codable, Identifiable {
+    let id: Int
     let type: String
     let name : String
     let nutrients: [FoodNutrientsModel]
 
     enum CodingKeys: String, CodingKey {
+        case id = "fdcId"
         case type = "dataType"
         case name = "description"
         case nutrients = "foodNutrients"

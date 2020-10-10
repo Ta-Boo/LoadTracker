@@ -10,24 +10,22 @@ import Alamofire
 
 // MARK: Veiws builder
 
-//enum ConstructableView: {
-//    case workoutPlan
-//    case caloriesPlan
-//    case dietPlan
-//}
 
-//struct ViewHolder<Value: View> {
-//    let value: Value
-//}
+enum ActiveSheet: Identifiable {
+    case history, personalize, recipes, searchFood
+    
+    var id: Int {
+        hashValue
+    }
+}
 extension CaloriesPlan {
     
     private enum ButtonStyle {
         case short, double, long
     }
     
-    private func generateButon<ViewHolder: View>(style: ButtonStyle = .short,
+    private func generateButon(style: ButtonStyle = .short,
                                            using g : GeometryProxy,
-                                           presenting viewToPresent: ViewHolder,
                                            text: String = "",
                                            systemImage: String,
                                            perform action: @escaping () -> Void)  -> some View {
@@ -69,17 +67,6 @@ extension CaloriesPlan {
             }
         }
         .foregroundColor(Assets.Colors.text)
-        .sheet(isPresented: $showingDetail) {
-            switch style {
-            case .short:
-                DietPlan()
-            case .double:
-                FoodListView()
-            case .long:
-                WorkoutPlan()
-            }
-            
-        }
         .padding()
         .frame(width: width , height: height)
         .background(color)
@@ -91,7 +78,9 @@ extension CaloriesPlan {
 struct CaloriesPlan: View {
     @State var sliderValue: Double = 0
     @State  var loaded = false
-    @State var showingDetail = false
+    @State var activeSheet: ActiveSheet?
+    
+    
     let viewModel = CaloriesPlanViewModel()
     
     
@@ -124,44 +113,50 @@ struct CaloriesPlan: View {
 
                     }
                     VStack {
-                        let buttonHeight = g.size.height * 1/9.9
 
                         generateButon(style: .long,
                                       using: geometry,
-                                      presenting: WorkoutPlan(),
                                       text: "Show history",
                                       systemImage: "clock.fill") {
-                            self.showingDetail.toggle()
+                            self.activeSheet = .history
                         }
                         HStack {
                             VStack {
                                 generateButon(style: .short,
                                               using: geometry,
-                                              presenting: WorkoutPlan(),
                                               text: "Personalize",
                                               systemImage: "person.crop.circle") {
-                                    self.showingDetail.toggle()
+                                    self.activeSheet = .personalize
                                 }
                                 Spacer().frame(height: 10)
                                 generateButon(style: .short,
                                               using: geometry,
-                                              presenting: WorkoutPlan(),
                                               text: "Recipes",
                                               systemImage: "plus.circle") {
-                                    self.showingDetail.toggle()
+                                    self.activeSheet = .recipes
                                 }
                             }
                             Spacer()
                             generateButon(style: .double,
                                           using: geometry,
-                                          presenting: WorkoutPlan(),
                                           systemImage: "magnifyingglass") {
-                                self.showingDetail.toggle()
+                                self.activeSheet = .searchFood
                             }
                             Spacer()
                         }
                         .padding([.bottom, .horizontal])
                     }
+                }
+            }.sheet(item: $activeSheet) { item in
+                switch item {
+                case .personalize:
+                    WorkoutPlan()
+                case .history:
+                    WorkoutPlan()
+                case .recipes:
+                    WorkoutPlan()
+                case .searchFood:
+                    FoodListView()
                 }
             }
         }

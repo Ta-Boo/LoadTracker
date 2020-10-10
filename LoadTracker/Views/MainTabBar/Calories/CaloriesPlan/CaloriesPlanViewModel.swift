@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 class CaloriesPlanViewModel {
     let data = [BarChartData(id: 0, name: "21.9", value: 789),
@@ -19,10 +18,6 @@ class CaloriesPlanViewModel {
                 BarChartData(id: 7, name: "28.9", value: 1790)
     ]
     
-    func fetchFood(name: String) {
-        Session.foodApiRequest(querry: "asdasda") { [weak self] result in
-            
-        }
-    }
+    
     
 }
