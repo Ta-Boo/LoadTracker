@@ -47,13 +47,14 @@ struct Onboarding: View {
                                     .font(.largeTitle)
                                     .foregroundColor(Assets.Colors.secondary)
                                     .padding()
+                                    .onTapGesture {
+                                        AppCache.showOnboarding = false
+                                    }
                             }
                             
                         }
                         
                         Spacer()
-                    }.onTapGesture {
-                        AppCache.showOnboarding = false
                     }
                 }
                 VStack {

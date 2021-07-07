@@ -42,5 +42,6 @@ struct LoaderTabBar: View {
                                  index: index,
                                  colors: colors)
         }
+        .disabled(selectedIndex == index)
     }
 }

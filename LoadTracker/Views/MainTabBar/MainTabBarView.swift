@@ -35,9 +35,9 @@ struct MainTabBarView : View {
         .background(Assets.Colors.primary)
         .edgesIgnoringSafeArea(.vertical)
     }
-    init() {
-        AppCache.showOnboarding = false
-    }
+//    init() {
+//        AppCache.showOnboarding = false
+//    }
 }
 
 #if DEBUG

@@ -10,10 +10,10 @@ import SwiftUI
 struct WorkoutPlan: View {
     var body: some View {
         ZStack {
-            Color("Primary")
+            Assets.Colors.primary
             Text("Hello, WorkoutPlan!")
-        }.background(Color("Primary"))
-//        .edgesIgnoringSafeArea(.vertical)
+        }
+        .edgesIgnoringSafeArea(.vertical)
     }
 }
 

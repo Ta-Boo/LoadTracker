@@ -22,6 +22,7 @@ struct FoodModel: Codable, Identifiable {
     let id: Int
     let type: String
     let name : String
+    let brandName: String?
     let nutrients: [FoodNutrientsModel]
 
     enum CodingKeys: String, CodingKey {
@@ -29,18 +30,28 @@ struct FoodModel: Codable, Identifiable {
         case type = "dataType"
         case name = "description"
         case nutrients = "foodNutrients"
+        case brandName
     }
 }
 
-struct FoodNutrientsModel: Codable {
+struct FoodNutrientsModel: Codable, Hashable {
+    let id: String
     let name : String?
     let unit : String
-    let value: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case name
-        case unit = "unitName"
-        case value = "number"
-    }
+    let value: Double?
 
+    enum CodingKeys: String, CodingKey {
+        case id = "nutrientNumber"
+        case name = "nutrientName"
+        case unit = "unitName"
+        case value = "value"
+    }
+}
+
+enum Nutrients: String, CaseIterable {
+    case proteins = "203"
+    case lipids = "204"
+    case carbohydrates = "205"
+    case sugars = "269"
+    case calories = "208"
 }
